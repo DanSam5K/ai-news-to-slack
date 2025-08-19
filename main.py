@@ -6,7 +6,7 @@
 #    By: dansam <dansam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 16:59:21 by dansam            #+#    #+#              #
-#    Updated: 2025/08/19 17:14:24 by dansam           ###   ########.fr        #
+#    Updated: 2025/08/19 17:18:18 by dansam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,9 @@ schedule.every().day.at("09:00").do(job)
 
 print("✅ AI news automation started...")
 
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+try:
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+except KeyboardInterrupt:
+    print("\n🛑 Stopping AI news automation.")
